@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script type="text/javascript">
+        function validate(form){
+            t2=form.t2.value;
+            t3=form.t3.value;
+            if(t2!=t3)
+            {
+              alert("PASSWORD AND CONFIRM PASSWORD NOT MATCHED")
+            return false;
+            }
+            else{
+                alert("welcome")
+            return true
+            }
+        
+        }
+    </script>
+</head>
+<body>
+    <form method="post"  onsubmit="return validate(this)" >
+        Name<input type="text" name="t1"><br>
+        Password<input type="password" name="t2" id="t2" ><br>
+        Confirm Password<input type="password" name="t3" id="t3"><br>
+        Mobile no.<input type="tel" name="t5" maxlength="10">
+        Gender<input type="radio" name="t4" value="male">male<br>
+        <input type="radio" name="t4" value="female">Female<br>
+        <input type="submit" value="submit">
+
+    </form>
+    
+</body>
+</html>

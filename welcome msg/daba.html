@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body><h1> <center><B><ul>ENGINEERING RESTAURANT</ul></b></center><center></center></h1><b>
+    <div class="container-fluid">
+        <div class="Container">
+            <div class="part1">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    Full Name: <input type="text" id="name">
+                    <br>
+                    Contact Number:<input type="text" id="number">
+                </fieldset>
+            </div>
+            <div class="part2">
+                <fieldset>
+                    <legend>Your order</legend>
+                    Smosa(Rs 10)<input type="text" id="smosa"><br>
+                    Dosa(Rs 100)<input type="text" id="dosa"><br>
+                    Kachori(Rs 15)<input type="text" id="kachori"><br>
+                    Chila(Rs 80)<input type="text" id="chila"><br>
+                    Maggi(Rs 50)<input type="text" id="maggi"><br>
+                </fieldset>
+            </div>
+            <div class="container">
+                <fieldset>
+                    <legend>Your bill</legend>
+                    <h2>Your Name: <span id="name2"></span></h2>
+                    <h2>Contact Number:<span id="number2"></span></h2>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>Menu</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody id="billstatement"></tbody>
+                    </table>
+                </fieldset>
+                <h1>Total Amount: Rs.<span id="amount"></span></h1>
+            </div>
+        </div>
+    </div></b>
+    <script>
+        var name,number;
+        document.getElementById("name").addEventListener("keyup",function(){
+            name=document.getElementById("name").value;
+            document.getElementById("name2").innerHTML=name;
+        });
+
+        document.getElementById("number").addEventListener("keyup",function(){
+            number=document.getElementById("number").value;
+            document.getElementById("number2").innerHTML=number;
+        });
+        var Smosa_price=10,Dosa_price=100;
+        var smosa_q=0,dosa_q=0;
+        var smosapriceshow="";
+        document.getElementById("smosa").addEventListener("keyup",function(){
+            if (this.value==''||this.value==0){
+                smosapriceshow="";
+                showbill();
+            }else{
+            smosa_q=this.value
+            smosapriceshow="<tr><td>smosa</td><td>Rs."+Smosa_price+"<td>"+smosa_q+"</td><td>"+Smosa_price+"X" +smosa_q+"="+Smosa_price*smosa_q+"</td></tr> "}
+            showbill();
+        });  
+
+        var dosa_q=0;
+        var dosapriceshow=""
+        document.getElementById("dosa").addEventListener("keyup",function(){
+            if (this.value==''||this.value==0){
+                dosapriceshow="";
+                dosa_q=0;
+                showbill();
+            }else{
+            dosa_q=this.value
+            dosapriceshow=" <td>dosa</td><td>Rs."+Dosa_price+"<td>"+dosa_q+"</td><td>"+Dosa_price+"X" +dosa_q+"="+Dosa_price*dosa_q+"</td> "}
+            showbill();
+        }); 
+
+
+        var Kachori_price=15;
+        var kachori_q=0;
+        var kachoripriceshow=""
+        document.getElementById("kachori").addEventListener("keyup",function(){
+            if (this.value==''||this.value==0){
+                kachoripriceshow='';
+                kachori_q=0;
+                showbill();
+            }else{
+            kachori_q=this.value
+            kachoripriceshow=" <tr><td>Kachori</td><td>Rs."+Kachori_price+"<td>"+kachori_q+"</td><td>"+Kachori_price+"X" +kachori_q+"="+Kachori_price*kachori_q+"</td></tr> "}
+            showbill();
+        }); 
+
+
+        var Chila_price=80;
+        var chila_q=0;
+        var chilapriceshow=""
+        document.getElementById("chila").addEventListener("keyup",function(){
+            if (this.value==''||this.value==0){
+                chilapriceshow='';
+                chila_q=0;
+                showbill();
+            }else{
+            chila_q=this.value
+            chilapriceshow=" <tr><td>Chila</td><td>Rs."+Chila_price+"<td>"+chila_q+"</td><td>"+Chila_price+"X" +chila_q+"="+Chila_price*chila_q+"</td></tr> "}
+            showbill();
+        }); 
+
+        var Maggi_price=50;
+        var maggi_q=0;
+        var maggipriceshow=""
+        document.getElementById("maggi").addEventListener("keyup",function(){
+            if (this.value==''||this.value==0){
+                maggipriceshow='';
+                maggi_q=0;
+                showbill();
+            }else{
+            maggi_q=this.value
+            maggipriceshow=" <tr><td>Maggi</td><td>Rs."+Maggi_price+"<td>"+maggi_q+"</td><td>"+Maggi_price+"X" +maggi_q+"="+Maggi_price*maggi_q+"</td></tr> "}
+            showbill();
+        }); 
+
+        function showbill(){
+            document.getElementById("billstatement").innerHTML=smosapriceshow+dosapriceshow+kachoripriceshow+chilapriceshow+maggipriceshow;
+            document.getElementById("amount").innerHTML=Smosa_price*smosa_q+Dosa_price*dosa_q+Kachori_price*kachori_q+Chila_price*chila_q+Maggi_price*maggi_q
+        }
+    </script>
+</body>
+</html>

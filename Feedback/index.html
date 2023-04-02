@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>feedback</title>
+    <style>
+        button:hover{
+            color:rgb(44,157,157);
+            background-color: rgb(110,237,237);
+            box-shadow: 0 0 1cm 0.25cm
+            rgb(110,237,237),
+            0 0 4cm 2cm
+            rgba(65,243,243,0.781),
+            inset 0 0 0.75cm 0.25cm
+            rgb(110,237,237);
+        }
+        button:active{
+            box-shadow: 0 0 0.6cm 0.25cm
+            rgb(110,237,237),
+            0 0 2.5cm 2cm
+            rgba(65,243,243,0.781),
+            inset 0 0 0.5cm 0.25cm
+            rgb(110,237,237);
+        }
+        button{
+            position: 
+            padding: 1cm 3cm;
+            color:rgb(44,157,157);
+            font-size:15px;
+            font-weight: bold;
+            text-transformation:uppercase;
+            text-shadow:0 0 0.5cm rgb(110,237,237);
+            background-color: rgb(44,157,157);
+            border:0.25cm solid rgb(110,237,237);
+            border-radius: 1cm;
+            box-shadow: 0 0 1cm 0.25cm
+            rgb(110,237,237),
+            0 0 4cm 1cm
+            rgba(65,243,243,0.781),
+            inset 0 0 0.75cm 0.25cm
+            rgb(110,237,237);
+            outline:none;
+            cursor:pointer;
+            transition:all 0.3s;
+        }
+        button::after{
+            content:"";
+            position:absolute;
+            top:120%;
+            left:0;
+            height:100%;
+            width: 100%;
+            background-color:rgba(65,243,243,0.781);
+            filter:blur(2cm)
+            opacity:0.7;
+            pointer-events:none;
+            transform:perspective(1.5cm)
+            rotatex(35deg)
+            scale(1,0,6)
+        }
+        
+    </style>
+</head>
+<body>
+    <form  method=post action="feedback.php">
+        <center><strong><b>
+    Enter your feedback</b></strong>
+    <textarea name="t1"></textarea><br><br><br><br><br><br><br>
+    <button type="submit">SUBMIT</button><br><br><br><br><br>
+    </center>
+</form>
+</body>
+</html>
